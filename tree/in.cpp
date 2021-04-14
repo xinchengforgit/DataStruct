@@ -4,11 +4,12 @@
 #include <stack>
 #include <iostream>
 using namespace std;
-typedef struct
+
+typedef struct node
 {
     int val;
-    bitree ls;
-    bitree rs;
+    node *ls;
+    node *rs;
 } binode, *bitree;
 stack<bitree> s;
 
@@ -41,7 +42,7 @@ void in(bitree &root)
 }
 
 //迭代实现
-void in(bitree &root)
+void in2(bitree &root)
 {
     if (root == NULL)
         return;
@@ -63,4 +64,11 @@ void in(bitree &root)
             }
         }
     }
+}
+int main()
+{
+    bitree root;
+    build(root);
+    in2(root);
+    return 0;
 }

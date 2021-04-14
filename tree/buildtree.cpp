@@ -26,11 +26,12 @@ void add(int s, int t)
     first[t] = tot;
 } //加边函数,表示加一条s,t节点之间加一条边
 //二叉树的构建
-typedef struct
+
+typedef struct node
 {
     int data;
-    bitree ls;
-    bitree rs;
+    node *ls;
+    node *rs;
 } binode, *bitree;
 void build(bitree &root)
 {

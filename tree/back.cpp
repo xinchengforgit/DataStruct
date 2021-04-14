@@ -4,11 +4,11 @@
 #include <algorithm>
 using namespace std;
 
-typedef struct
+typedef struct node
 {
     int val;
-    bitree ls;
-    bitree rs;
+    node *ls;
+    node *rs;
 } binode, *bitree;
 stack<bitree> s;
 
@@ -48,4 +48,7 @@ void back1(bitree &root)
             printf("%d ", temp);
         }
     }
+}
+int main()
+{
 }
