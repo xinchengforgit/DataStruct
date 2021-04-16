@@ -1,5 +1,9 @@
 #include <cstdio>
 #include <algorithm>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+using namespace std;
 #define maxn 1000000
 int a[maxn];
 int temp[maxn];
@@ -25,4 +29,21 @@ void msort(int b, int e)
     for (int i = b; i <= e; i++)
         a[i] = temp[i];
     return;
+}
+int main()
+{
+    srand((unsigned int)time(NULL));
+    int n;
+    cin >> n;
+    for (int i = 1; i <= n; i++)
+    {
+        a[i] = rand() % 100;
+    }
+    for (int i = 1; i <= n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    msort(1, n);
+    for (int i = 1; i <= n; i++)
+        printf("%d ", a[i]);
+    return 0;
 }

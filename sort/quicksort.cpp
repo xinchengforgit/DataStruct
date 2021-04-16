@@ -1,5 +1,8 @@
 #include <cstdio>
 #include <algorithm>
+#include <cstdlib>
+#include <iostream>
+#include <ctime>
 #define maxn 100000
 int a[maxn];
 void quicksort(int l, int r)
@@ -15,6 +18,8 @@ void quicksort(int l, int r)
         if (i <= j)
         {
             std::swap(a[i], a[j]);
+            i++;
+            j--; //这两个别忘了
         }
     } while (i <= j);
     if (i < r)
@@ -23,3 +28,18 @@ void quicksort(int l, int r)
         quicksort(l, j);
     return;
 } //快排()
+int main()
+{
+    srand((unsigned int)time(NULL));
+    int n;
+    std::cin >> n;
+    for (int i = 1; i <= n; i++)
+        a[i] = rand() % 100;
+    for (int i = 1; i <= n; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    quicksort(1, n);
+    for (int i = 1; i <= n; i++)
+        printf("%d ", a[i]);
+    return 0;
+}
